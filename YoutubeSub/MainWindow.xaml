@@ -6,14 +6,26 @@
         xmlns:local="clr-namespace:YoutubeSub"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600
-        " WindowStyle="None">
+        " WindowStyle="None" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF232C3F"/>
+            <GradientStop Color="#FF1C212C" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="25px"/>
             <RowDefinition Height="75px"/>
             <RowDefinition Height="250px"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid Name="ToolBar" Grid.Row="0" HorizontalAlignment="Left" Width="600" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Height="18px" Width="18px" Source="/Resources/minimazi_25.png" Stretch="Fill" />
+                <Image Height="18px" Width="18px" Source="/Resources/close1_25.png" Stretch="Fill" />
+            </StackPanel>
+        </Grid>
         <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="87*"/>
             <ColumnDefinition Width="313*"/>

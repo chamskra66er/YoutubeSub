@@ -17,3 +17,5 @@ C:\VS\С#\YoutubeSub\YoutubeSub\obj\Debug\netcoreapp3.1\YoutubeSub.csproj.CoreCo
 C:\VS\С#\YoutubeSub\YoutubeSub\obj\Debug\netcoreapp3.1\YoutubeSub.dll
 C:\VS\С#\YoutubeSub\YoutubeSub\obj\Debug\netcoreapp3.1\YoutubeSub.pdb
 C:\VS\С#\YoutubeSub\YoutubeSub\obj\Debug\netcoreapp3.1\YoutubeSub.genruntimeconfig.cache
+C:\VS\С#\YoutubeSub\YoutubeSub\obj\Debug\netcoreapp3.1\YoutubeSub.Properties.Resources.resources
+C:\VS\С#\YoutubeSub\YoutubeSub\obj\Debug\netcoreapp3.1\YoutubeSub.csproj.GenerateResource.cache
