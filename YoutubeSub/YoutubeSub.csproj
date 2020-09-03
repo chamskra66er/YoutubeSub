@@ -99,5 +99,11 @@
     <Resource Include="Source\close1_25Ac.png" />
     <Resource Include="Source\minimazi_25.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\minimazi_25Ac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\youtubeSub.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

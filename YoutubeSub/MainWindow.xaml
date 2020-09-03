@@ -26,11 +26,14 @@
                             <Setter Property="Source" Value="Source/minimazi_25.png"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value="True">
-                                    <Setter Property="Source" Value="Source/close1_25Ac.png"/>
+                                    <Setter Property="Source" Value="Source/minimazi_25Ac.png"/>
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="1"></BlurEffect>
+                    </Image.Effect>
                 </Image>
                 <Image Name="ExitButton" Height="15px" Width="15px" Margin="5,5,10,5">
                     <Image.Style>
@@ -43,8 +46,18 @@
                             </Style.Triggers>
                         </Style>
                     </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="1"></BlurEffect>
+                    </Image.Effect>
                 </Image>
             </StackPanel>
+        </Grid>
+        <Grid Name="Logo" Grid.Row="1">
+            <Image Source="Source/youtubeSub.png" Height="50px" Margin="0,0,500,50">
+                <Image.Effect>
+                    <BlurEffect Radius="1"></BlurEffect>
+                </Image.Effect>
+            </Image>
         </Grid>
 
     </Grid>
