@@ -9,7 +9,7 @@ using System.Windows;
 namespace YoutubeSub
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Логика взаимодействия для App.xaml
     /// </summary>
     public partial class App : Application
     {

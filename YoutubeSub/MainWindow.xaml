@@ -5,31 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YoutubeSub"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600
-        " WindowStyle="None" ResizeMode="NoResize">
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF232C3F"/>
-            <GradientStop Color="#FF1C212C" Offset="1"/>
+            <GradientStop Color="#FF232C3F" Offset="0"/>
+            <GradientStop Color="#FF1A1E28" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25px"/>
-            <RowDefinition Height="75px"/>
+            <RowDefinition Height="100px"/>
             <RowDefinition Height="250px"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Name="ToolBar" Grid.Row="0" HorizontalAlignment="Left" Width="600" >
+        <Grid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Image Height="18px" Width="18px" Source="/Resources/minimazi_25.png" Stretch="Fill" />
-                <Image Height="18px" Width="18px" Source="/Resources/close1_25.png" Stretch="Fill" />
+                <Image Name="MinButton" Height="15px" Width="15px" Margin="5px">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/minimazi_25.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=MinButton}" Value="True">
+                                    <Setter Property="Source" Value="Source/close1_25Ac.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Name="ExitButton" Height="15px" Width="15px" Margin="5,5,10,5">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="Source/close1_25.png"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=ExitButton}" Value="True">
+                                    <Setter Property="Source" Value="Source/close1_25Ac.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
             </StackPanel>
         </Grid>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="87*"/>
-            <ColumnDefinition Width="313*"/>
-        </Grid.ColumnDefinitions>-->
 
     </Grid>
 </Window>
