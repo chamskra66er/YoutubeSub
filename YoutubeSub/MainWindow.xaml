@@ -161,5 +161,25 @@
                 </StackPanel>
             </Button>
         </Border>
+        <Grid Grid.Row="2" Height="200px" Width="56px" 
+              HorizontalAlignment="Left" 
+              VerticalAlignment="Top" Margin="48,-10,0,0">
+            <Polygon Fill="Black" StrokeThickness="4" Stroke="#FF0C0101"
+                     Points="0,8,
+                     0,200,
+                     52,200,
+                     52,8,
+                     40,8,
+                     30,0,
+                     20,8" Grid.RowSpan="3"/>
+            <Polygon Fill="#FF272E38" StrokeThickness="1" Stroke="#FF48454E"
+                     Points="2,8,
+                     2,200,
+                     52,200,
+                     52,8,
+                     40,8,
+                     30,0,
+                     20,8" Grid.RowSpan="3"/>
+        </Grid>
     </Grid>
 </Window>
