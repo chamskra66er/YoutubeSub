@@ -99,5 +99,13 @@ namespace YoutubeSub
             lbLang.Text = "JA";
             language = "ja";
         }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbId.Text) && language!=null) 
+            {
+            
+            }           
+        }
     }
 }

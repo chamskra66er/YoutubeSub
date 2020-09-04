@@ -214,7 +214,7 @@
                 </StackPanel>
             </Button>
         </Border>
-        <Grid Name="LeftGrid" Grid.Row="2" Height="214px" Width="56px" 
+        <Grid Name="LeftGrid" Panel.ZIndex="999" Grid.Row="2" Height="214px" Width="56px" 
               HorizontalAlignment="Left" Visibility="Hidden"
               VerticalAlignment="Top" Margin="48,-10,0,0">
             <Polygon Fill="Black" StrokeThickness="4" Stroke="#FF0C0101"
@@ -267,7 +267,30 @@
         </Grid>
         <TextBlock Name="lbLang" Grid.Row="1" Text="" Foreground="#FFACB3BF" FontSize="14"
                        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,68,0,0"/>
-        <TextBox Grid.Row="1" Style="{StaticResource TB}" Width="400px" Margin="250,50,0,0" Text="skjkdsjkdjs"/>
+        <TextBox Name="tbId" Grid.Row="1" FontSize="14" Style="{StaticResource TB}" Width="400px" Margin="250,50,0,0" Text=""/>
+        <TextBlock IsHitTestVisible="False" FontSize="14" Text="Youtube video id" Grid.Row="1"
+                   Margin="332,66,0,0" VerticalAlignment="Top" Foreground="#FF535559">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=tbId}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/> 
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button Name="btnSend" Grid.Row="1" Height="20" Width="30" Margin="700,49,0,0" Background="#FF212A3B"
+                BorderThickness="0" Click="btnSend_Click">
+            <Image >
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Source/arrow_20.png"/>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </Button>
 
 
     </Grid>
