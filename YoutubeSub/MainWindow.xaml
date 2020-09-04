@@ -12,6 +12,40 @@
             <GradientStop Color="#FF1A1E28" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
+    <Window.Resources>
+        <Style x:Key="ComboboxButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="#FF181E2A"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+                                                            Duration="0:0:0.100" To="2,2,0,0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" 
+                                                            Duration="0:0:0.100" To="0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25px"/>
@@ -59,6 +93,73 @@
                 </Image.Effect>
             </Image>
         </Grid>
-
+        <Border Name="CbmBorder" Grid.Row="1" Height="24px" Width="40px" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Margin="50,65,0,0" CornerRadius="2" BorderThickness="1" 
+                Background="Black">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="BorderBrush" Value="#FF333842"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="#FF51555C"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color"
+                                                    Duration="0:0:0.100" To="#FF333842"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color"
+                                                    Duration="0:0:0.100" To="#FF51555C"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Button Style="{StaticResource ComboboxButton}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Height="14px" Width="14px" Margin="5,0,0,0">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="Source/glb_25.png"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=CbmBorder}" Value="True">
+                                        <Setter Property="Source" Value="Source/glb_25Ac.png"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,
+                                        AncestorType={x:Type Button},AncestorLevel=1},
+                                        Path=IsPressed}" Value="True">
+                                        <Setter Property="Source" Value="Source/glb_25.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <Image Height="11px" Width="11px" Margin="3,0,5,0">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="Source/arrow_20.png"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=CbmBorder}" Value="True">
+                                        <Setter Property="Source" Value="Source/arrow_20Ac.png"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor,
+                                        AncestorType={x:Type Button},AncestorLevel=1},
+                                        Path=IsPressed}" Value="True">
+                                        <Setter Property="Source" Value="Source/arrow_20.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </StackPanel>
+            </Button>
+        </Border>
     </Grid>
 </Window>

@@ -105,5 +105,20 @@
   <ItemGroup>
     <Resource Include="Source\youtubeSub.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\glb_25Ac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\glb_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\arrow_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\arrow_20Ac.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

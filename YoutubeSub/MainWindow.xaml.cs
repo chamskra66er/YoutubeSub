@@ -27,7 +27,7 @@ namespace YoutubeSub
 
         private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void MinButton_MouseDown(object sender, MouseButtonEventArgs e)
