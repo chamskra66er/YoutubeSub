@@ -68,6 +68,36 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="TB" TargetType="TextBox">
+            <Setter Property="Background" Value="#FF11141A"/>
+            <Setter Property="Height" Value="25px"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderBrush" Value="#FF2D333D"/>
+            <Setter Property="Padding" Value="10,3,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root" Height="{TemplateBinding Height}"
+                              Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
+                            <Border x:Name="Background" BorderThickness="1" CornerRadius="2" Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <ScrollViewer x:Name="PART_ContentHost" BorderThickness="0" Padding="{TemplateBinding Padding}"
+                                          IsTabStop="False" Background="{x:Null}" TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#FF383C44"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#FF10578C"/>
+                                <Setter Property="Background" Value="#FF0E1116"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -184,21 +214,21 @@
                 </StackPanel>
             </Button>
         </Border>
-        <Grid Name="LeftGrid" Grid.Row="2" Height="210px" Width="56px" 
+        <Grid Name="LeftGrid" Grid.Row="2" Height="214px" Width="56px" 
               HorizontalAlignment="Left" Visibility="Hidden"
               VerticalAlignment="Top" Margin="48,-10,0,0">
             <Polygon Fill="Black" StrokeThickness="4" Stroke="#FF0C0101"
                      Points="0,8,
-                     0,210,
-                     52,210,
+                     0,214,
+                     52,214,
                      52,8,
                      40,8,
                      30,0,
                      20,8" Grid.RowSpan="3"/>
             <Polygon Fill="#FF272E38" StrokeThickness="1" Stroke="#FF48454E"
                      Points="2,8,
-                     2,210,
-                     52,210,
+                     2,212,
+                     52,212,
                      52,8,
                      40,8,
                      30,0,
@@ -234,6 +264,8 @@
                 </StackPanel>
             </Grid>
         </Grid>
-        
+        <TextBox Grid.Row="1" Style="{StaticResource TB}" Width="400px" Margin="350,50,0,0" Text="skjkdsjkdjs"/>
+
+
     </Grid>
 </Window>
