@@ -20,6 +20,7 @@ namespace YoutubeSub
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string language=null;
         public MainWindow()
         {
             InitializeComponent();
@@ -55,6 +56,48 @@ namespace YoutubeSub
         {
             if (LeftGrid.Visibility == Visibility.Hidden) LeftGrid.Visibility = Visibility.Visible;
             else LeftGrid.Visibility = Visibility.Hidden;
+        }
+
+        private void btnEn_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "EN";
+            language = "en";
+        }
+
+        private void btnFr_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "FR";
+            language = "fr";
+        }
+
+        private void btnRu_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "RU";
+            language = "ru";
+        }
+
+        private void btnEs_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "ES";
+            language = "es";
+        }
+
+        private void btnIt_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "IT";
+            language = "it";
+        }
+
+        private void btnZh_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "ZH";
+            language = "zh";
+        }
+
+        private void btnJa_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "JA";
+            language = "ja";
         }
     }
 }

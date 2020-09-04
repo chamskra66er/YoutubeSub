@@ -237,34 +237,37 @@
             <Grid Height="210px" Width="50px" HorizontalAlignment="Left" 
                       VerticalAlignment="Top" Margin="5,10,7,0">
                 <StackPanel Orientation="Vertical">
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnEn" Style="{StaticResource CmbBtn}" Click="btnEn_Click">
                         <TextBlock Text="EN"/>
                     </Button>
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnFr" Style="{StaticResource CmbBtn}" Click="btnFr_Click">
                         <TextBlock Text="FR"/>
                     </Button>
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnDe" Style="{StaticResource CmbBtn}">
                         <TextBlock Text="DE"/>
                     </Button>
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnRu" Style="{StaticResource CmbBtn}" Click="btnRu_Click">
                         <TextBlock Text="RU"/>
                     </Button>
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnEs" Style="{StaticResource CmbBtn}" Click="btnEs_Click">
                         <TextBlock Text="ES"/>
                     </Button>
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnIt" Style="{StaticResource CmbBtn}" Click="btnIt_Click">
                         <TextBlock Text="IT"/>
                     </Button>
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnZh" Style="{StaticResource CmbBtn}" Click="btnZh_Click">
                         <TextBlock Text="ZH"/>
                     </Button>
-                    <Button Style="{StaticResource CmbBtn}">
+                    <Button Name="btnJa" Style="{StaticResource CmbBtn}" Click="btnJa_Click">
                         <TextBlock Text="JA"/>
                     </Button>
                 </StackPanel>
             </Grid>
+            
         </Grid>
-        <TextBox Grid.Row="1" Style="{StaticResource TB}" Width="400px" Margin="350,50,0,0" Text="skjkdsjkdjs"/>
+        <TextBlock Name="lbLang" Grid.Row="1" Text="" Foreground="#FFACB3BF" FontSize="14"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,68,0,0"/>
+        <TextBox Grid.Row="1" Style="{StaticResource TB}" Width="400px" Margin="250,50,0,0" Text="skjkdsjkdjs"/>
 
 
     </Grid>
