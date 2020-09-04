@@ -45,6 +45,29 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="CmbBtn" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="#FF272E38"/>
+            <Setter Property="Height" Value="25px"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF323945"/>
+                                <Setter Property="Foreground" Value="#FFC3C4C8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -122,7 +145,7 @@
                     </Style.Triggers>
                 </Style>
             </Border.Style>
-            <Button Style="{StaticResource ComboboxButton}">
+            <Button Style="{StaticResource ComboboxButton}" Click="Button_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Height="14px" Width="14px" Margin="5,0,0,0">
                         <Image.Style>
@@ -161,25 +184,56 @@
                 </StackPanel>
             </Button>
         </Border>
-        <Grid Grid.Row="2" Height="200px" Width="56px" 
-              HorizontalAlignment="Left" 
+        <Grid Name="LeftGrid" Grid.Row="2" Height="210px" Width="56px" 
+              HorizontalAlignment="Left" Visibility="Hidden"
               VerticalAlignment="Top" Margin="48,-10,0,0">
             <Polygon Fill="Black" StrokeThickness="4" Stroke="#FF0C0101"
                      Points="0,8,
-                     0,200,
-                     52,200,
+                     0,210,
+                     52,210,
                      52,8,
                      40,8,
                      30,0,
                      20,8" Grid.RowSpan="3"/>
             <Polygon Fill="#FF272E38" StrokeThickness="1" Stroke="#FF48454E"
                      Points="2,8,
-                     2,200,
-                     52,200,
+                     2,210,
+                     52,210,
                      52,8,
                      40,8,
                      30,0,
                      20,8" Grid.RowSpan="3"/>
+            
+            <Grid Height="210px" Width="50px" HorizontalAlignment="Left" 
+                      VerticalAlignment="Top" Margin="5,10,7,0">
+                <StackPanel Orientation="Vertical">
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="EN"/>
+                    </Button>
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="FR"/>
+                    </Button>
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="DE"/>
+                    </Button>
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="RU"/>
+                    </Button>
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="ES"/>
+                    </Button>
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="IT"/>
+                    </Button>
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="ZH"/>
+                    </Button>
+                    <Button Style="{StaticResource CmbBtn}">
+                        <TextBlock Text="JA"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
         </Grid>
+        
     </Grid>
 </Window>

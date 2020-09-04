@@ -50,5 +50,11 @@ namespace YoutubeSub
                 this.DragMove();
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (LeftGrid.Visibility == Visibility.Hidden) LeftGrid.Visibility = Visibility.Visible;
+            else LeftGrid.Visibility = Visibility.Hidden;
+        }
     }
 }
