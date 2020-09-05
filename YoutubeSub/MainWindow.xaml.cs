@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YoutubeSub.Service;
 
 namespace YoutubeSub
 {
@@ -21,9 +22,12 @@ namespace YoutubeSub
     public partial class MainWindow : Window
     {
         private string language=null;
+        private readonly ISender _sender;
+
         public MainWindow()
         {
             InitializeComponent();
+            _sender = new SenderService();
         }
 
         private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
@@ -104,7 +108,9 @@ namespace YoutubeSub
         {
             if (!string.IsNullOrEmpty(tbId.Text) && language!=null) 
             {
-            
+                string uri =$"http://video.google.com/timedtext?lang={language}&v={tbId.Text}"; 
+                _sender.SendAsync(uri);
+                
             }           
         }
     }

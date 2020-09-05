@@ -8,6 +8,6 @@ namespace YoutubeSub.Service
 {
     public interface ISender
     {
-        Task SendAsync(string uri);
+        string Send(string uri);
     }
 }
