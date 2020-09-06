@@ -22,12 +22,11 @@ namespace YoutubeSub
     public partial class MainWindow : Window
     {
         private string language=null;
-        private readonly ISender _sender;
+        private ISender _sender;
 
         public MainWindow()
         {
-            InitializeComponent();
-            _sender = new SenderService();
+            InitializeComponent();           
         }
 
         private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
@@ -66,52 +65,75 @@ namespace YoutubeSub
         {
             lbLang.Text = "EN";
             language = "en";
+            LeftGrid.Visibility = Visibility.Hidden;
         }
 
         private void btnFr_Click(object sender, RoutedEventArgs e)
         {
             lbLang.Text = "FR";
             language = "fr";
+            LeftGrid.Visibility = Visibility.Hidden;
         }
 
         private void btnRu_Click(object sender, RoutedEventArgs e)
         {
             lbLang.Text = "RU";
             language = "ru";
+            LeftGrid.Visibility = Visibility.Hidden;
         }
 
         private void btnEs_Click(object sender, RoutedEventArgs e)
         {
             lbLang.Text = "ES";
             language = "es";
+            LeftGrid.Visibility = Visibility.Hidden;
         }
 
         private void btnIt_Click(object sender, RoutedEventArgs e)
         {
             lbLang.Text = "IT";
             language = "it";
+            LeftGrid.Visibility = Visibility.Hidden;
         }
 
         private void btnZh_Click(object sender, RoutedEventArgs e)
         {
             lbLang.Text = "ZH";
             language = "zh";
+            LeftGrid.Visibility = Visibility.Hidden;
         }
 
         private void btnJa_Click(object sender, RoutedEventArgs e)
         {
             lbLang.Text = "JA";
             language = "ja";
+            LeftGrid.Visibility = Visibility.Hidden;
+        }
+        private void btnDe_Click(object sender, RoutedEventArgs e)
+        {
+            lbLang.Text = "DE";
+            language = "de";
+            LeftGrid.Visibility = Visibility.Hidden;
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(tbId.Text) && language!=null) 
             {
-                string uri =$"http://video.google.com/timedtext?lang={language}&v={tbId.Text}"; 
-                _sender.SendAsync(uri);
-                
+                _sender = new SenderService();
+
+                string uri =$"http://video.google.com/timedtext?lang={language}&v={tbId.Text}";
+                try
+                {
+                    string text = _sender.Send(uri);
+                    textBody.Text = text;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Failed request...", "Exception");
+                }
             }           
         }
+
     }
 }

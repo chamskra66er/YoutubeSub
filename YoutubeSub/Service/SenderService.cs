@@ -39,13 +39,19 @@ namespace YoutubeSub.Service
                 Task<string> responseData = responseContent.ReadAsStringAsync();
                 string data = responseData.Result;
 
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(data);
-                result = xmlDoc.InnerText;
-            }            
-
+                try
+                {
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(data);
+                    result = xmlDoc.InnerText;
+                }
+                catch (ArgumentNullException e)
+                {
+                    MessageBox.Show(e.ToString(), "Exception");
+                }
+            }
             httpClient.Dispose();
-
+           
             return result;
         }
     }

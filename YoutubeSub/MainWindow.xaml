@@ -233,7 +233,7 @@
                      40,8,
                      30,0,
                      20,8" Grid.RowSpan="3"/>
-            
+
             <Grid Height="210px" Width="50px" HorizontalAlignment="Left" 
                       VerticalAlignment="Top" Margin="5,10,7,0">
                 <StackPanel Orientation="Vertical">
@@ -243,7 +243,7 @@
                     <Button Name="btnFr" Style="{StaticResource CmbBtn}" Click="btnFr_Click">
                         <TextBlock Text="FR"/>
                     </Button>
-                    <Button Name="btnDe" Style="{StaticResource CmbBtn}">
+                    <Button Name="btnDe" Style="{StaticResource CmbBtn}" Click="btnDe_Click">
                         <TextBlock Text="DE"/>
                     </Button>
                     <Button Name="btnRu" Style="{StaticResource CmbBtn}" Click="btnRu_Click">
@@ -263,7 +263,7 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            
+
         </Grid>
         <TextBlock Name="lbLang" Grid.Row="1" Text="" Foreground="#FFACB3BF" FontSize="14"
                        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,68,0,0"/>
@@ -275,7 +275,7 @@
                     <Setter Property="Visibility" Value="Collapsed"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Text, ElementName=tbId}" Value="">
-                            <Setter Property="Visibility" Value="Visible"/> 
+                            <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -291,7 +291,14 @@
                 </Image.Style>
             </Image>
         </Button>
-
+        <DockPanel Grid.Row="2" VerticalAlignment="Top" Height="286" Margin="10,5,10,-40" >
+            <ScrollViewer Margin="0,5,0,5">
+                <TextBox x:Name="textBody" AcceptsReturn="True" AcceptsTab="True" BorderThickness="0"
+                         Background="#FF181E2A" TextWrapping="Wrap" Width="750px" Margin="0,0,0,0" 
+                         Foreground="White" FontSize="15px" IsReadOnly="True"
+                         Text="{Binding SomeText}" SelectionBrush="Purple" SelectionOpacity="0.2"/>
+            </ScrollViewer>
+        </DockPanel>
 
     </Grid>
 </Window>
