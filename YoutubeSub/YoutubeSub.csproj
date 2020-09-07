@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>youtubeSub_ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -109,7 +112,6 @@
   <ItemGroup>
     <Resource Include="Source\youtubeSub.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Source\glb_25Ac.png" />
   </ItemGroup>
@@ -121,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\arrow_20Ac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="youtubeSub_ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
